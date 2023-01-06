@@ -1,3 +1,3 @@
-name = "Mulugeta"
-name2 = list(enumerate(name))
-print(name2)
+name = "bbbaaaba"
+name = set(name)
+print(name)
