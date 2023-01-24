@@ -1,7 +1,7 @@
 
 def pascal_triangle(num):
     all_array = []
-    for i in range(1,num+1):
+    for i in range(1,num):
         if i == 1:
             all_array.append([1])
         if i == 2:
