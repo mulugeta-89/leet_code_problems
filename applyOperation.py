@@ -17,4 +17,4 @@ def applyOperation(nums):
             right -=1
     return nums
 
-print(applyOperation([1,2,2,1,1,0]))
+print(applyOperation([1,2,2,1,1,0,3]))
