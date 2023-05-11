@@ -1,11 +1,5 @@
 def spiral(n):
-    matrix = []
-    small_arr = []
-    for i in range(1, n**2 + 1):
-        small_arr.append(0)
-        if len(small_arr) == n:
-            matrix.append(small_arr)
-            small_arr = []
+    matrix = [[0] *n for i in range(n)]
     rowBegin = 0
     rowEnd = n-1
     columnBegin = 0
@@ -26,10 +20,10 @@ def spiral(n):
             matrix[rowEnd][i] = count
             count += 1
         rowEnd -= 1
+        
         for i in range(rowEnd, rowBegin-1,-1):
             matrix[i][columnBegin] = count
             count += 1
         columnBegin+= 1
     return matrix
-
 print(spiral(3))
