@@ -51,10 +51,7 @@ class MyLinkedList:
             new_node.next = self.head
             self.head = new_node
         elif index == self.getSize():
-            current = self.head
-            while(current.next):
-                current = current.next
-            current.next = new_node
+            self.addAtTail(val)
         else:
             current = self.head
             for i in range(index-1):
