@@ -16,7 +16,6 @@ class Solution:
             mid = dicti[root.val]
             root.right = builder(mid+1, high)
             root.left = builder(low, mid-1)
-            
             return root
         return builder(0, len(inorder)-1)
         
