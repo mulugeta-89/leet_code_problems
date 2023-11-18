@@ -10,11 +10,9 @@ class Solution:
                 k += 1
                 if copier == target:
                     break
-                continue
             elif len(sol) == 0 and i != target[k]:
                 sol.append("Push")
                 sol.append("Pop")
-                continue
             elif i != target[k]:
                 sol.append("Push")
                 sol.append("Pop")
