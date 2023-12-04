@@ -1,8 +1,10 @@
 class Solution:
     def printVertically(self, s: str) -> List[str]:
         s = s.split()
-        len_array = [len(item) for item in s]
-        maxi_length = max(len_array)
+        maxi_length = -1
+        for item in s:
+            if len(item) > maxi_length:
+                maxi_length = len(item)
         for i in range(len(s)):
             if len(s[i]) < maxi_length:
                 s[i] += " " * (maxi_length-len(s[i]))
