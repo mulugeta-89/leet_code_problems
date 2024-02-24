@@ -10,7 +10,7 @@ class Solution:
         sol = ""
         def bfs(root,sol):
             if not root:
-                return 0
+                return ""
             sol += str(root.val)
             if not root.left and not root.right:
                 arr.append(sol)
