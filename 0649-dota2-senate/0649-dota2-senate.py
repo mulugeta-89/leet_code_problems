@@ -1,6 +1,6 @@
 class Solution:
     def predictPartyVictory(self, senate: str) -> str:
-        n = len(senate)
+        n = 100
         rad = [i for i in range(len(senate)) if senate[i] == "R"]
         dire = [i for i in range(len(senate)) if senate[i] == "D"]
         while rad and dire:
