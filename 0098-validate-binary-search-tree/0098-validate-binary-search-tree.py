@@ -7,11 +7,16 @@
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
         arr = []
-        def inorder(root):
-            if root is None:
-                return None   
-            inorder(root.left)
-            arr.append(root.val)
-            inorder(root.right)
-        inorder(root)
-        return True if arr == list(sorted(set(arr))) else False
+        def valid(root):
+            if root:
+                valid(root.left)
+                arr.append(root.val)
+                valid(root.right)
+        valid(root)
+        for i in range(1, len(arr)):
+            if arr[i] <= arr[i-1]:
+                return False
+        return True
+        
+
+        
