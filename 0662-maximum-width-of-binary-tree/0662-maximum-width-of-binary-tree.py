@@ -9,28 +9,25 @@ class Solution:
         def bfs(root):
             if not root:
                 return []
-            sol = []
-            queue = [(0, root)]
+            sol = 0
+            queue = deque([(0, root)])
+            left_most = queue[0][0]
+            right_most = -float("inf")
             
             while queue:
                 n = len(queue)
+                left_most = queue[0][0]
                 current_level = []
                 for _ in range(n):
-                    left = queue.pop(0)
+                    left = queue.popleft()
                     ind, node = left
-                    current_level.append(ind)
+                    right_most = max(right_most, ind)
 
                     if node.left:
                         queue.append((2*ind + 1,node.left))
                     if node.right:
                         queue.append((2*ind + 2,node.right))
-                sol.append(current_level)
+                sol = max(sol, right_most-left_most+1)
             return sol
-        indices = bfs(root)
-        maxi = 0
-        for i in range(len(indices)-1, -1, -1):
-            calc = indices[i][-1] - indices[i][0] + 1
-            if calc > maxi:
-                maxi = calc
-        return maxi 
+        return bfs(root)
         
