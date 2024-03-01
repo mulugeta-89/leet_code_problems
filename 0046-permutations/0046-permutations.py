@@ -10,7 +10,6 @@ class Solution:
             for num in nums:
                 if num not in path:
                     path.append(num)
-                    print(path)
                     backtrack(path)
                     path.pop()
         backtrack([])
