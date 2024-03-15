@@ -1,16 +1,13 @@
 class Solution:
-    def searchInsert(self, arr: List[int], k: int) -> int:
-        if k in arr:
-            return arr.index(k)
-        arr.append(k)
-        arr = sorted(arr)
-        left = 0
-        right = len(arr)-1
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        left, right = 0, len(nums)-1
         while left <= right:
             mid = (left+right)//2
-            if arr[mid] == k:
+            if nums[mid] == target:
                 return mid
-            elif arr[mid] > k:
-                right = mid -1
+            elif target < nums[mid]:
+                right = mid-1
             else:
-                left = mid + 1
+                left = mid+1
+        return left
+        
